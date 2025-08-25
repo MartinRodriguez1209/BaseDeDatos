@@ -1,0 +1,262 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Página-1" id="ugbR-kI58yqOowlvtkRq">
+    <mxGraphModel dx="2505" dy="2158" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-69" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="80" width="540" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-45" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="705" y="100" width="515" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="120" width="460" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="160" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGok10ZQW5w9ku6zzVmJ-1" value="Una agencia de viajes desea ofrecer mejor servicio a sus clientes, y lo contrata a usted y&lt;br&gt;a su equipo para diseñar la base de datos. Después de algunas entrevistas, usted anotó las&lt;br&gt;siguientes pautas:&lt;br&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;a. La agencia se dedica a la venta de pasajes aéreos o terrestres y tours.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;b. Los clientes de la agencia de turismo son aquellos que alguna vez contrataron tours o&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;compraron un pasaje.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;c. Para verificar si un cliente alguna vez operó con la agencia, se lo quiere buscar por DNI&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;o por Nombre y Apellido.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;d. Cuando uno contrata un tour o compra un pasaje por primera vez, se anotan los&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;siguientes datos: DNI, Apellido, Nombre, Dirección, Teléfono particular, Teléfono celular&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;y Teléfono laboral, si los tuviera. Además se quiere agregar un código interno de la&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;agencia, que identifique al cliente.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;e. Los tours tienen un número de tour, una fecha de comienzo y una de finalización del&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;tour. Aquellos tours que visitan las mismas ciudades y los mismos hoteles tienen el&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;mismo número de tour, obviamente con distintas fechas de inicio y final.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;f. Los puntos de ruta de un tour pueden ser distintas ciudades, teniendo en cada punto de&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ruta asignado un hotel. Se debe poder identificar los puntos de ruta y hoteles que&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;pertenecen a un tour.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;g. De las ciudades que forman parte de un tour se necesita: el nombre de la ciudad,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Kilómetros desde BS AS, característica telefónica, y el país al que pertenece.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;h. De los hoteles con que trabaja la agencia necesitamos los siguientes datos: nombre del&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;hotel, nombre del país y nombre de la ciudad en que está ubicado, dirección, teléfono,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;fax y cantidad de estrellas. Los nombres de algunos de los hoteles se repiten en&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;distintas ciudades. Además por cada hotel se necesita el precio por habitación, según&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;temporada (alta o baja) y tipo de habitación (simple, doble, triple).&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;i. Con respecto a la compra de pasajes, los mismos pueden ser aéreos o terrestres.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;j. De los pasajes aéreos se necesita: nombre de la línea aérea, número de vuelo, fecha,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;hora de salida y de llegada, origen y destino, datos del cliente, y si es un vuelo de&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;cabotaje o internacional.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;k. De los pasajes terrestres se necesita la siguiente información: nombre de la empresa,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;fecha y hora de salida, fecha y hora de llegada, origen y destino, número de asiento,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;datos del cliente y si es de media o larga distancia.&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;l. Un cliente puede confirmar su participación en más de un tour (se sobreentiende que&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;las fechas son diferentes).&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;m. Se quiere guardar información sobre todos los tours que contrató un cliente.&lt;/span&gt;&lt;/blockquote&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="-110" width="550" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-1" value="TOUR" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-2" value="CIUDAD" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="760" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-4" target="Wd5IUpu4XwwmUajjozp6-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-4" value="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="790" y="480" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-7" value="HOTEL" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-9" target="Wd5IUpu4XwwmUajjozp6-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-9" target="Wd5IUpu4XwwmUajjozp6-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-9" value="BIT" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="930" y="170" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-25" value="FECHA_INI" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="425" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-26" value="" style="endArrow=none;html=1;rounded=0;entryX=0.62;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" target="Wd5IUpu4XwwmUajjozp6-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="480" as="sourcePoint" />
+            <mxPoint x="965" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-27" value="FECHA_FIN" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="985" y="570" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-28" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1035" y="305" as="sourcePoint" />
+            <mxPoint x="1050" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-30" value="PASAJE" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="530" y="-50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-31" target="Wd5IUpu4XwwmUajjozp6-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-31" value="7" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="790" y="-50" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-35" value="CLIENTE" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="450" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-49" value="CONTRATO" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-50" target="Wd5IUpu4XwwmUajjozp6-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-50" target="Wd5IUpu4XwwmUajjozp6-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-50" value="3" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="480" y="330" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-54" target="Wd5IUpu4XwwmUajjozp6-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-54" value="4" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="590" y="450" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.008;entryY=0.681;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-54" target="Wd5IUpu4XwwmUajjozp6-69">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-59" target="Wd5IUpu4XwwmUajjozp6-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-59" target="Wd5IUpu4XwwmUajjozp6-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-59" value="5" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-62" value="HABITACION" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-63" target="Wd5IUpu4XwwmUajjozp6-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-63" value="6" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.807;entryY=0.993;entryDx=0;entryDy=0;endArrow=none;endFill=0;entryPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-63" target="Wd5IUpu4XwwmUajjozp6-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-73" value="DNI" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="364" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-74" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-73" target="Wd5IUpu4XwwmUajjozp6-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="300" as="sourcePoint" />
+            <mxPoint x="460" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-75" value="CODIGO_CLI*" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-76" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-35" target="Wd5IUpu4XwwmUajjozp6-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="250" as="sourcePoint" />
+            <mxPoint x="640" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-77" value="CODIGO_CONTRATO*" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="567" width="160" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-78" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.394;exitY=0.029;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-77" target="Wd5IUpu4XwwmUajjozp6-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="580" as="sourcePoint" />
+            <mxPoint x="450" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-79" value="PRECIO_TOTAL" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="284" y="540" width="130" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-80" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.769;exitY=0.03;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-79" target="Wd5IUpu4XwwmUajjozp6-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="540" as="sourcePoint" />
+            <mxPoint x="360" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-81" value="FECHA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="600" width="130" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-82" value="" style="endArrow=none;html=1;rounded=0;entryX=0.925;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.385;exitY=0.03;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-81" target="Wd5IUpu4XwwmUajjozp6-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="620" as="sourcePoint" />
+            <mxPoint x="650" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-83" value="CODIGO_PASAJ*" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="-100" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-84" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-30" target="Wd5IUpu4XwwmUajjozp6-83">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="40" as="sourcePoint" />
+            <mxPoint x="520" y="-10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-85" value="TIPO_PASAJ" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="-110" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-86" value="" style="endArrow=none;html=1;rounded=0;entryX=0.309;entryY=0.85;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-30" target="Wd5IUpu4XwwmUajjozp6-85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="20" as="sourcePoint" />
+            <mxPoint x="480" y="-30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-87" value="ORIGEN" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="735" y="-120" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-89" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-31" target="Wd5IUpu4XwwmUajjozp6-87">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" as="sourcePoint" />
+            <mxPoint x="740" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-90" value="" style="endArrow=none;html=1;rounded=0;exitX=0.9;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.3;entryY=0.85;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-31" target="Wd5IUpu4XwwmUajjozp6-91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="10" as="sourcePoint" />
+            <mxPoint x="950" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-91" value="DESTINO" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="870" y="-110" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-92" value="CODIGO_CIU*" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="875" y="140" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-93" value="" style="endArrow=none;html=1;rounded=0;exitX=0.227;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-92" target="Wd5IUpu4XwwmUajjozp6-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="854" y="-20" as="sourcePoint" />
+            <mxPoint x="913" y="-83" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-94" value="NOMBRE*" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1025" y="120" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-96" value="" style="endArrow=none;html=1;rounded=0;exitX=0.418;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.357;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-94" target="Wd5IUpu4XwwmUajjozp6-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="875" y="160" as="sourcePoint" />
+            <mxPoint x="860" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-97" value="PAIS" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="980" y="-50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-98" target="Wd5IUpu4XwwmUajjozp6-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-98" target="Wd5IUpu4XwwmUajjozp6-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-98" value="8" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="900" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-102" value="FECHA" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="705" y="455" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-103" value="" style="endArrow=none;html=1;rounded=0;entryX=0.79;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-4" target="Wd5IUpu4XwwmUajjozp6-102">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="600" as="sourcePoint" />
+            <mxPoint x="760" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-104" value="PRECIO" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="290" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Wd5IUpu4XwwmUajjozp6-105" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.172;exitY=0.425;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Wd5IUpu4XwwmUajjozp6-63" target="Wd5IUpu4XwwmUajjozp6-104">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="450" as="sourcePoint" />
+            <mxPoint x="1010" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
