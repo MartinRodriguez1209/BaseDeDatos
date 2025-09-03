@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
+  <diagram name="Página-1" id="spya_5UlJuY33H3jKzHF">
+    <mxGraphModel dx="2253" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-1" value="Una clínica médica desea implementar una base de datos para gestionar eficientemente la información&#xa;relacionada con sus operaciones. La base de datos debe almacenar información detallada sobre los&#xa;pacientes, médicos, citas y tratamientos, y permitir consultas que faciliten la administración diaria de la&#xa;clínica.&#xa;La base de datos debe registrar la información de los pacientes, cada uno identificado por un número de&#xa;identificación único. Para cada paciente, se debe almacenar su nombre completo, fecha de nacimiento,&#xa;dirección y número de teléfono. Los pacientes pueden ser atendidos por varios médicos a lo largo del&#xa;tiempo, por lo que la base de datos debe reflejar esta relación.&#xa;Por otro lado, la base de datos también debe gestionar la información de los médicos que trabajan en la&#xa;clínica. Cada médico debe estar identificado por un número de identificación único y la base de datos&#xa;debe almacenar su nombre completo, especialidad médica, y número de licencia médica. Un médico&#xa;puede atender a múltiples pacientes y, además, estar involucrado en la realización de diferentes&#xa;tratamientos.&#xa;Las citas médicas deben ser registradas en la base de datos, incluyendo la fecha y hora de la cita, el&#xa;motivo de la consulta, y la asociación de la cita con un paciente y un médico específico. Dado que un&#xa;paciente puede tener múltiples citas con diferentes médicos, la base de datos debe poder manejar estas&#xa;múltiples relaciones.&#xa;Además, la base de datos debe gestionar la información relacionada con los tratamientos administrados a&#xa;los pacientes. Cada tratamiento debe tener un código único y estar descrito por su nombre y una&#xa;descripción detallada. Los tratamientos están asociados a las citas médicas, y un tratamiento puede ser&#xa;administrado por varios médicos.&#xa;Finalmente, la base de datos debe ser capaz de responder a consultas complejas que permitan obtener,&#xa;por ejemplo, el historial de citas de un paciente, los tratamientos administrados en un día específico, o los&#xa;médicos que han atendido a un gran número de pacientes en un período determinado.&#xa;Se debe poder consultar lo siguiente:&#xa;● Todos los pacientes atendidos por un médico específico.&#xa;● El historial de citas de un paciente en particular.&#xa;● La lista de tratamientos administrados en una fecha específica.&#xa;● Los médicos que han atendido a más de 10 pacientes en el último mes.&#xa;● Los detalles de todas las citas en las que se ha administrado un tratamiento específico." style="text;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="80" width="680" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-2" value="PACIENTE" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="580" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-3" value="codigo_paciente" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-2" target="Gk6TmNWTkidyErhnRHrw-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="900" y="380" as="sourcePoint" />
+            <mxPoint x="950" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-5" value="MEDICO" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="620" y="545" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-6" value="ESPECIALIDAD" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="595" y="810" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-7" value="CITA" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="450" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-8" value="codigo_medico" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="640" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-9" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-5" target="Gk6TmNWTkidyErhnRHrw-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="230" as="sourcePoint" />
+            <mxPoint x="790" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-10" target="Gk6TmNWTkidyErhnRHrw-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-10" target="Gk6TmNWTkidyErhnRHrw-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-10" value="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="485" y="550" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-14" target="Gk6TmNWTkidyErhnRHrw-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-14" target="Gk6TmNWTkidyErhnRHrw-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-14" value="2" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="485" y="290" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-17" value="TRATAMIENTO" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="795" y="400" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-18" target="Gk6TmNWTkidyErhnRHrw-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-18" target="Gk6TmNWTkidyErhnRHrw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-18" value="3" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="630" y="405" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-21" target="Gk6TmNWTkidyErhnRHrw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=classicThin;endFill=1;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-21" target="Gk6TmNWTkidyErhnRHrw-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-21" value="4" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="840" y="205" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-23" target="Gk6TmNWTkidyErhnRHrw-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-23" target="Gk6TmNWTkidyErhnRHrw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-23" value="5" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="840" y="550" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-31" target="Gk6TmNWTkidyErhnRHrw-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gk6TmNWTkidyErhnRHrw-31" target="Gk6TmNWTkidyErhnRHrw-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gk6TmNWTkidyErhnRHrw-31" value="6" style="rhombus;whiteSpace=wrap;html=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="655" y="690" width="50" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
