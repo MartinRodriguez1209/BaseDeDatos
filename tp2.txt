@@ -1,0 +1,79 @@
+2. 
+Desde el menu
+E= tipo_de_menu + {nombre_plato + precio_plato + descripcion_plato}
+
+
+Desde el pedido (hamburgueseria)
+E= nro_pedido + fecha_pedido + hora_pedido + nombre_cliente + {nombre_plato + precio + cantidad_plato + aclaracion_cliente}
+
+Desde el cliente 
+E= nombre_cliente + nro_pedido + fecha_pedido + hora_pedido + {nombre_plato + precio + cantidad_plato + aclaracion_cliente}
+
+
+
+3. Corregir el siguiente diccionario de datos, agregando o quitando lo que sea necesario,
+e indicando el porqué de los errores encontrados:
+=nombre/del/diario + EDITORIAL + fechaAlta + Tirada-Diaria + 123numero +
+{Nombre_Seccion + director_seccion + fax-director + (hombre|mujer)} +
+{desarrollo_articulo}
+    o ¿Se pueden responder las siguientes preguntas en base al esquema anterior?
+    ¿Qué modificación haría para poder contestarlas?:
+        ▪ ¿Cuántos diarios tengo cargados en mi base de datos? si se puede, los puedo contar
+        ▪ ¿En qué localidad se publican estos diarios? no puedo porque no tiene un atributo que 
+        haga referencia a la localidad
+        ▪ ¿Cuántos artículos se publicaron en el diario del día 25/3/2012? en el anterior no puedo porque 
+        no tiene fecha
+        ▪ ¿A qué sección corresponden los artículos?
+    o ¿Qué otras entidades se podrían incorporar al esquema para optimizarlo y
+    como quedaría el diccionario de datos terminado?
+
+E =nombre_del_diario + editorial + fechaAlta + numero_diario** +
+{fecha_de_publicacion + numero_de_publicacion +  tirada_diaria +
+{nombre_seccion** + director_seccion + fax-director +genero + {nombre_articulo + contenido_articulo 
++ numero_articulo**}}}
+
+4. 
+Profesor
+E: @numero_legajo + nombre_apellido_del_profesor +  fecha_nacimiento + {nombre_materia + @numero_materia}
+
+
+Materia
+E:nombre_materia + @numero_materia + nombre_departamento + @nombre_facultad+ {año_cursada + 
+ { @legajo_profesor + cargo_profesor} 
++ lista_inscriptos}
+
+Departamento
+E: nombre_departamento + @codigo_departamento + nombre_facultad + {@numero_materia + nombre_materia} +
+{@numero_legajo_profesor + nombre_apellido_del_profesor}
+
+Facultad 
+E: @nombre_facultad + @codigo_facultad + {@nombre_departamento} + {@cod_carreara + nombre_carrera}
+
+5. Realice un diccionario de datos con los siguientes atributos: 
+nombre_artista, ----
+ id_tour, ---
+nombre_tour -----
+, nombre_disco -----
+, nombre_cancion ----
+, duración ----- (no es suficientemente descriptivo)
+, genero_musical,----
+nombre_integrante, ----
+ fecha_comienzo_tour -----
+ , nacionalidad_artista, ------
+anio_lanzamiento_disco ----
+, país_origen_disc -----
+, pais_tour ---
+, pais_lanzamiento ---- (no es suficientemente descriptivo) ,
+ejemplares_vendidos -------
+, localidad_tour ---
+, discográfica -----
+, email, ?
+fecha_estimada_localidad_tour ----
+, representante. ----
+    ● ¿Son los nombres suficientemente descriptivos?
+    ● ¿Qué recomendación daría al poner nombre a los atributos?
+
+E: nombre_tour + id_tour + fecha_comienzo_tour + {pais_tour {localidad_tour + fecha_estimada_localidad_tour}} +
+nombre_artista + nacionalidad_artista + {nombre_integrante} + representante + {nombre_disco +duracion(_disco) + 
+anio_lanzamiento_disco + ejemplares_vendidos + país_origen_disc + discográfica + pais_lanzamiento + {nombre_cancion +
+genero_musical}} 

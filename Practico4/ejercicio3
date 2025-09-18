@@ -1,0 +1,4 @@
+E1: numero_socio + dni_socio +nombre_socio + apellido_socio + direccion_socio + telefono_socio  + {numero_bilbioteca + fecha_alta_biblioteca} + {codigo_prestamo + numero_bilbioteca + fecha_retirada_libro + fecha_esperada_devolucion_libro + {ISBNlibro + titulo_libro} + fecha_real_devolucion}
+
+E2: numero_bilbioteca + nombre_biblioteca + direccion_biblioteca + {telefono_biblioteca} + {ISBNlibro + titulo_libro + {autor_libro + nacionalidad_autor} + cantidad_paginas + numero_copias + fecha_ingreso_libro}
+

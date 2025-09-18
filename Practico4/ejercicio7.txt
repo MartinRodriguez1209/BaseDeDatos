@@ -1,0 +1,32 @@
+E1 =nro_sala+superficie+tipo_sala
+E2 =codigo_aparato+descripción_ap+estado+nro_sala+tipo_sala
+E3 =codigo_clase+descripción_clase+día_hora+dni_profesor+ nombre_prof + {nro_socio+ nombre_socio + profesión}
+E4 =dni_profesor+nombre_prof+título+experiencia_prof+fecha_ingreso
+E5=nro_socio+ nombre_socio+dirección+teléfono+{codigo_aparato}
+
+Primera forma normal: 
+
+E1.1 =nro_sala+superficie+tipo_sala
+
+E2.1 =codigo_aparato+descripción_ap+estado+nro_sala+tipo_sala
+
+E3.1 =codigo_clase+descripción_clase+día_hora+dni_profesor+ nombre_prof 
+E3.2 =codigo_clase+  nro_socio+ nombre_socio + profesión 
+
+E4.1 =dni_profesor+nombre_prof+título+experiencia_prof+fecha_ingreso
+
+E5.1=nro_socio+ nombre_socio + dirección + teléfono
+E5.2= codigo_aparato + nro_socio
+
+Segunda forma normal:
+
+E1.1.1 =nro_sala+superficie+tipo_sala
+
+E2.1 =codigo_aparato+descripción_ap+estado+nro_sala
+
+E3.1.1 =codigo_clase + día_hora + dni_profesor 
+E3.1.2 =codigo_clase + descripción_clase
+E3.1.3 = dni_profesor + nombre_prof
+E3.2.1 = nro_socio+ nombre_socio + profesión + codigo_clase
+
+

@@ -1,0 +1,138 @@
+E1 =nro_sala+superficie+tipo_sala
+E2 =codigo_aparato+descripción_ap+estado+nro_sala+tipo_sala
+E3 =codigo_clase+descripción_clase+día_hora+dni_profesor+ nombre_prof + {nro_socio+ nombre_socio + profesión}
+E4 =dni_profesor+nombre_prof+título+experiencia_prof+fecha_ingreso
+E5=nro_socio+ nombre_socio+dirección+teléfono+{codigo_aparato}
+
+Primera forma normal:
+
+E1.1 =nro_sala+superficie+tipo_sala
+
+E2.1 =codigo_aparato+descripción_ap+estado+nro_sala+tipo_sala
+
+E3.1 =codigo_clase+descripción_clase+día_hora+dni_profesor+ nombre_prof
+E3.2 =codigo_clase+  nro_socio+ nombre_socio + profesión
+
+E4.1 =dni_profesor+nombre_prof+título+experiencia_prof+fecha_ingreso
+
+E5.1=nro_socio+ nombre_socio + dirección + teléfono
+E5.2= codigo_aparato + nro_socio
+
+Segunda forma normal:
+
+E1.1.1 = nro_sala+superficie+tipo_sala
+
+E2.1.1 = codigo_aparato+descripción_ap+estado+nro_sala+tipo_sala
+
+E3.1.1 = codigo_clase+descripción_clase+día_hora+dni_profesor+ nombre_prof
+E3.2.1 = codigo_clase+  nro_socio
+E3.2.2 = nro_socio+ nombre_socio + profesión
+
+E4.1.1 = dni_profesor+nombre_prof+título+experiencia_prof+fecha_ingreso
+
+E5.1.1 = nro_socio+ nombre_socio + dirección + teléfono
+E5.2.1 = codigo_aparato + nro_socio
+
+Tercera forma normal:
+
+E1.1.1.1 = nro_sala + superficie + tipo_sala
+
+E2.1.1.1 = codigo_aparato + descripción_ap + estado + nro_sala
+E2.1.1.2 = nro_sala + tipo_sala
+
+E3.1.1.1 = codigo_clase + descripción_clase + día_hora + dni_profesor (FK)
+E3.1.1.2 = dni_profesor + nombre_prof
+
+E3.2.1.1 = codigo_clase+  nro_socio
+E3.2.2.2 = nro_socio+ nombre_socio + profesión
+
+E4.1.1.1 = dni_profesor + nombre_prof + título + experiencia_prof + fecha_ingreso
+
+E5.1.1.1 = nro_socio+ nombre_socio + dirección + teléfono
+
+E5.2.1.1 = codigo_aparato + nro_socio
+
+Renombramiento:
+
+
+APARATO = codigo_aparato + descripción_ap + estado + nro_sala
+SALA = nro_sala + tipo_sala + superficie
+
+CLASE = codigo_clase + descripción_clase + día_hora + dni_profesor (FK)
+PROFESOR = dni_profesor + nombre_prof
+
+CLASE_SOCIO = codigo_clase+  nro_socio
+
+PROFESOR = dni_profesor + nombre_prof + título + experiencia_prof + fecha_ingreso
+
+SOCIO = nro_socio+ nombre_socio + dirección + teléfono + profesión
+
+APARATO_SOCIO = codigo_aparato + nro_socio
+
+
+Esquema = numero_proyecto + descripción + fecha_inicio +
+fecha_estipulada_fin + {dni_empleado + nombre + numero_legajo +
+{numero_familiar + nombre_familiar } + {id_maquina + descripción +
+tipo_maquina + fecha_asignacion } + {numero_telefono + tipo_telefono}} +
+numero_cliente + nombre_cliente + dni_cliente + fecha_nacimiento
+
+Primera forma normal
+
+E1 = numero_proyecto + descripcion + fecha_inicio + fecha_estipulada_fin + numero_cliente
++ nombre_cliente + dni_cliente + fecha_nacimiento
+E2 = dni_empleado + numero_proyecto + nombre + numero_legajo
+E3 = numero_familiar + dni_empleado + numero_proyecto + nombre_familiar
+E4 = id_maquina + dni_empleado + numero_proyecto + descripcion_maquina
++ tipo_maquina + fecha_asignacion
+E5 = numero_telefono + dni_empleado + numero_proyecto + tipo_telefono
+
+Segunda forma normal
+
+E1.1 = numero_proyecto + descripcion + fecha_inicio + fecha_estipulada_fin + numero_cliente
++ nombre_cliente + dni_cliente + fecha_nacimiento
+
+E2.1 = dni_empleado + numero_proyecto
+E2.2 = numero_proyecto + nombre + numero_legajo
+
+E3.1 = numero_familiar + dni_empleado + numero_proyecto
+E3.2 = numero_familiar + nombre_familiar
+
+E4.1 = id_maquina + dni_empleado + numero_proyecto + fecha_asignacion
+E4.2 = id_maquina + descripcion_maquina + tipo_maquina
+
+E5.1 = numero_telefono + dni_empleado + numero_proyecto
+E5.2 = numero_telefono + tipo_telefono
+
+Tercera forma normal
+
+E1.1.1 = numero_proyecto + descripcion + fecha_inicio + fecha_estipulada_fin + numero_cliente(FK)
+E1.1.2 = numero_cliente + nombre_cliente + dni_cliente + fecha_nacimiento
+
+E2.1.1 = dni_empleado + numero_proyecto
+E2.2.1 = dni_empleado + nombre + numero_legajo
+
+E3.1.1 = numero_familiar + dni_empleado + numero_proyecto
+E3.2.1 = numero_familiar + nombre_familiar
+ 
+E4.1.1 = id_maquina + dni_empleado + numero_proyecto + fecha_asignacion
+E4.2.1 = id_maquina + descripcion_maquina + tipo_maquina
+
+E5.1.1 = numero_telefono + dni_empleado + numero_proyecto
+E5.2.1 = numero_telefono + tipo_telefono
+
+Renombramiento
+
+PROYECTO = numero_proyecto + descripcion + fecha_inicio + fecha_estipulada_fin + numero_cliente(FK)
+CLIENTE = numero_cliente + nombre_cliente + dni_cliente + fecha_nacimiento
+
+EMPLEADO_PROYECTO = dni_empleado + numero_proyecto
+EMPLEADO = dni_empleado + nombre + numero_legajo
+
+FAMILIAR_EMPLEADO_PROYECTO = numero_familiar + dni_empleado + numero_proyecto
+FAMILIAR = numero_familiar + nombre_familiar
+ 
+MAQUINA_EMPLEADO_PROYECTO = id_maquina + dni_empleado + numero_proyecto + fecha_asignacion
+MAQUINA = id_maquina + descripcion_maquina + tipo_maquina
+
+TELEFONO_EMPLEADO_PROYECTO = numero_telefono + dni_empleado + numero_proyecto
+TELEFONO = numero_telefono + tipo_telefono
