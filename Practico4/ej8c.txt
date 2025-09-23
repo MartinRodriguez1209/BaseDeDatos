@@ -1,0 +1,39 @@
+Esquema = id_celular + modelo + celular + {id_imagen + path_archivo } +
+{id_mp3 + path_archivo } + {id_contacto + nombre_apellido + {id_telefono
++numero_telefono + tipo_telefono} + {calle + numero + piso + departamento}} +
+nombre_compania.
+
+Primera forma normal
+
+E1 = id_celular PK + modelo + celular + nombre_compania
+
+E2 = id_celular PK + id_imagen PK + path_archivo
+
+E3 = id_celular PK + id_mp3 PK + path_archivo
+
+E4 = id_celular PK + id_contacto PK + nombre_apellido
+
+E5 = id_celular PK + id_contacto PK + id_telefono PK + numero_telefono + tipo_telefono
+
+E6 = id_celular PK + id_contacto PK + calle PK + numero + piso + departamento 
+
+Segunda forma normal
+
+
+E1.1 = id_celular PK + modelo + celular + nombre_compania
+ 
+E2.1 = id_celular PK + id_imagen PK + path_archivo
+ 
+E3.1 = id_celular PK + id_mp3 PK + path_archivo
+ 
+E4.1 = id_celular PK + id_contacto PK 
+E4.2 = id_contacto PK + nombre_apellido
+
+E5.1 = id_celular PK + id_contacto PK + id_telefono PK 
+E5.2 =  id_telefono PK + numero_telefono + tipo_telefono
+
+E6.1 = id_celular PK + id_contacto PK + calle PK
+E6.2 = calle PK + numero + piso + departamento  
+
+Tercera forma normal 
+
