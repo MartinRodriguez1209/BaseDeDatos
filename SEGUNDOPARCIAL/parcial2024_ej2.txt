@@ -1,0 +1,70 @@
+REPARACION = numero_reparacion + fecha_reparacion + id_cliente + nombre_cliente + email_cliente + 
++ {id_repuesto + descripcion_repuesto + cantidad_stock + cantidad_utlizada} + 
+{id_usuario + nombre_usuario + {fecha_trabajo + descripcion_tarea} + contraseña}
+
+
+REPUESTO = id_repuesto+ codigo_repuesto + {id_proveedor + cuit + nombre_proveedor + direccion_envio_repuesto} + punto_pedido
+
+
+PROVEEDOR = id_proveedor + cuit + nombre_proveedor + direccion_proveedor + {id_repuesto+ codigo_repuesto_proveedor} +
+ {numero_pedido + fecha_pedido + {id_repuesto + cantidad_solicitada + cantidad_ingreso + importe_unitario + importe_diferencial}}
+
+
+CLIENTE = id_cliente + nombre_cliente + apellido + {numero_telefono + interno + tipo_telefono + numero_a_discar }
+
+PRIMERA FORMA NORMAL
+
+E1: numero_reparacion(PK) + fecha_reparacion + id_cliente + nombre_cliente + email_cliente 
+E2: numero_reparacion(PK) + id_repuesto(PK) + descripcion_repuesto + cantidad_stock + cantidad_utlizada
+E3: numero_reparacion(PK) + id_usuario(PK) + nombre_usuario + contraseña
+E4:numero_reparacion(PK) + id_usuario(PK) + fecha_trabajo(PK) + descripcion_tarea 
+
+E5: id_repuesto(PK) + codigo_repuesto + punto_pedido
+E6: id_repuesto(PK) + id_proveedor(PK) + cuit + nombre_proveedor + direccion_envio_repuesto
+
+E7: id_cliente(PK) + nombre_cliente + apellido
+E8:  id_cliente(PK) + numero_telefono(PK) + interno + tipo_telefono + numero_a_discar
+
+SEGUNDA FORMA NORMAL
+
+E1.1: numero_reparacion(PK) + fecha_reparacion + id_cliente + nombre_cliente + email_cliente 
+
+E2.1: numero_reparacion(PK) + id_repuesto(PK) + cantidad_utlizada
+E2.2: id_repuesto(PK) + descripcion_repuesto + cantidad_stock 
+
+E3.1: numero_reparacion(PK) + id_usuario(PK)
+E3.2: id_usuario(PK) + nombre_usuario + contraseña
+
+E4.1: numero_reparacion(PK) + id_usuario(PK) + fecha_trabajo(PK) + descripcion_tarea 
+
+E5.1: id_repuesto(PK) + codigo_repuesto + punto_pedido
+E6.1: id_repuesto(PK) + id_proveedor(PK) + direccion_envio_repuesto
+E6.2: id_proveedor(PK) + cuit + nombre_proveedor
+
+E7.1: id_cliente(PK) + nombre_cliente + apellido
+
+E8.1:  id_cliente(PK) + numero_telefono(PK)
+E8.2: numero_telefono(PK) + interno + tipo_telefono + numero_a_discar
+
+TERCERA FORMA NORMAL
+
+E1.1.1: numero_reparacion(PK) + fecha_reparacion + id_cliente(FK)
+E1.1.2: id_cliente(PK) + nombre_cliente + email_cliente 
+
+E2.1.1: numero_reparacion(PK) + id_repuesto(PK) + cantidad_utlizada
+E2.2.1: id_repuesto(PK) + descripcion_repuesto + cantidad_stock 
+
+E3.1.1: numero_reparacion(PK) + id_usuario(PK)
+E3.2.1: id_usuario(PK) + nombre_usuario + contraseña
+
+E4.1.1: numero_reparacion(PK) + id_usuario(PK) + fecha_trabajo(PK) + descripcion_tarea 
+
+E5.1.1: id_repuesto(PK) + codigo_repuesto + punto_pedido
+
+E6.1.1: id_repuesto(PK) + id_proveedor(PK) + direccion_envio_repuesto
+E6.2.1: id_proveedor(PK) + cuit + nombre_proveedor
+
+E7.1.1: id_cliente(PK) + nombre_cliente + apellido
+
+E8.1.1:  id_cliente(PK) + numero_telefono(PK)
+E8.2.1: numero_telefono(PK) + interno + tipo_telefono + numero_a_discar

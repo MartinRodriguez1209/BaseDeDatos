@@ -1,0 +1,42 @@
+
+ESQUEMA = id libro + titulo + isbn + año_publicacion + {id_autor + nombre + apellido +
+id_nacionalidad + nacionalidad} + cantidad_ejemplares + {id_prestamo + id_libro + id_usuario +
+id_usuario + nombre + apellido + email + telefono + direccion + fecha_prestamo + fecha_devolucion +
+fecha_devolucion_real} + id_genero + nombre_genero
+
+
+PRIMERA FORMA NORMAL
+
+E1:  id_libro (PK) + titulo + isbn + año_publicacion + cantidad_ejemplares + id_genero + nombre_genero
+
+E2: id_libro (PK) + id_autor(PK) + nombre + apellido +id_nacionalidad + nacionalidad
+
+E3:id_libro (PK) + id_prestamo (PK) + id_libro + id_usuario + id_usuario + nombre + apellido +
+ email + telefono + direccion + fecha_prestamo + fecha_devolucion + fecha_devolucion_real
+
+SEGUNDA FORMA NORMAL
+
+E1.1:  id_libro (PK) + titulo + isbn + año_publicacion + cantidad_ejemplares + id_genero + nombre_genero
+
+E2.1: id_libro (PK) + id_autor(PK) 
+
+E2.2: id_autor(PK) + nombre + apellido +id_nacionalidad + nacionalidad
+
+E3.1: id_libro (PK) + id_prestamo (PK) 
+
+E3.2: id_prestamo (PK) + id_libro + id_usuario + id_usuario + nombre + apellido + email + telefono + direccion + fecha_prestamo + fecha_devolucion + fecha_devolucion_real
+
+TERCERA FORMA NORMAL
+
+E1.1.1:  id_libro (PK) + titulo + isbn + año_publicacion + cantidad_ejemplares + id_genero(FK) 
+E1.1.2:  id_genero(PK) + nombre_genero
+
+E2.1.1: id_libro (PK) + id_autor(PK)
+
+E2.2.1: id_autor(PK) + nombre + apellido +id_nacionalidad(FK)
+E2.2.2: id_nacionalidad(PK) + nacionalidad
+
+E3.1.1: id_libro (PK) + id_prestamo (PK) 
+
+E3.2.1: id_prestamo (PK) + id_libro(FK) + id_usuario(FK) + fecha_prestamo + fecha_devolucion + fecha_devolucion_real
+E3.2.2: id_usuario(PK) + nombre + apellido + email + telefono + direccion 

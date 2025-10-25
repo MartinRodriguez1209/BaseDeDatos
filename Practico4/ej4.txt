@@ -1,0 +1,163 @@
+Dada la siguiente situación problemática, obtener un esquema normalizado.
+Explicar claramente cualquier consideración que permita entender sin
+ambigüedades.
+Un comercio dedicado a la venta de materiales para la construcción, desea
+automatizar el control de ventas, clientes, stock y proveedores. El comercio está
+dividido en sectores: amoblamientos de cocina, amoblamientos para baños,
+construcción, pisos, etc. Cada sector tiene un encargado y varios vendedores.
+Se tiene el siguiente diccionario de datos preliminar:
+empleados: legajo, D.N.I., apellido,nombre, dirección, teléfono, fecha en que
+comenzó a trabajar en el comercio, sector al que pertenece, D.N.I. esposa, nombre
+y apellido esposa (si la tuviera), ( D.N.I. hijos, nombre y apellido hijos si los tuviera).
+Compras: D.N.I., apellido y nombre, dirección del cliente, número del recibo de
+compra, fecha de la compra, (código de los materiales que compró, descripción de
+los materiales, precio unitario) y precio total.
+Proveedores: código, D.N.I., nombre, dirección, y teléfonos del proveedor, código
+material , cantidad comprada.
+Cada vez que un proveedor vende al comercio, se guarda la siguiente información
+de los materiales que recibe: fecha, sector, encargado, proveedor, código de
+materiales, descripción de los mismos y cantidad.
+El sistema debe mantener un archivo de stock con información como código del
+material, descripción, cantidad actual, y stock mínimo.
+
+
+E1: legajo + dni + nomre_apellido_empleado + dirección + teléfono + fecha_ingreso + sector + dni_matrimonio + nombre_apellido_matrimonio +
+ { dnio_hij@ + nombre_apellido_hij@ }
+
+Compras:  numero_recibo_compra + fecha_compra + dni_cliente + nombre_apellido_cliente + direccion_cliente + {codigo_material + descripcion_MATERI + precio_producto + cantidad_compra_material}
+ + precio_total
+
+Material: codigo_material + cantidad_actual + stock_minimo + descripcion_material
+ 
+Proveedores: código_proveedor + dni_proveedor + nombre_apellido_proveedor + direccion_proveedor + {telefono_proveedor} + {codigo_material} + 
+{codigo_compra_proveedor + fecha_compra_proveedor + sector_compra_proveedor + legajo_encargado   + {codigo_material + cantidad_compra}}
+
+Sector: codigo_sector + nombre_sector + descripcion_sector + legajo_encargado_sector + {legajo_vendedor}
+
+Primera forma normal
+
+
+E1: legajo_empleado (PK) + dni + nomre_apellido_empleado + dirección + teléfono + fecha_ingreso + sector + dni_matrimonio + nombre_apellido_matrimonio +
+
+E2: legajo_empleado(PK) dnio_hij@ (PK) + nombre_apellido_hij@
+
+E3:  numero_recibo_compra(PK) + fecha_compra + dni_cliente + nombre_apellido_cliente + direccion_cliente + precio_total
+
+E4:numero_recibo_compra(PK) + codigo_material(PK) + descripcion_material + precio_material + cantidad_compra_material
+
+E5: codigo_material(PK) + cantidad_actual + stock_minimo + descripcion_material
+
+E6: código_proveedor(PK) + dni_proveedor + nombre_apellido_proveedor + direccion_proveedor + 
+
+E7: código_proveedor(PK) + telefono_proveedor(PK)
+
+E8: código_proveedor(PK) + codigo_material(PK)
+
+E9: código_proveedor(PK) + codigo_compra_proveedor(PK) + fecha_compra_proveedor + sector_compra_proveedor + legajo_encargado 
+
+E10:código_proveedor(PK) + codigo_compra_proveedor(PK) + codigo_material(PK) + cantidad_compra
+
+E11: codigo_sector (PK) + nombre_sector + descripcion_sector + legajo_encargado_sector 
+
+E12: codigo_sector(PK) + legajo_vendedor(PK)
+
+Segunda forma normal
+
+E1.1: legajo_empleado (PK) + dni + nomre_apellido_empleado + dirección + teléfono + fecha_ingreso + sector + dni_matrimonio + nombre_apellido_matrimonio 
+
+E2.1: legajo_empleado(PK) + dnio_hij@ (PK) 
+E2.2: dnio_hij@ (PK) + nombre_apellido_hij@
+
+
+E3.1:  numero_recibo_compra(PK) + fecha_compra + dni_cliente + nombre_apellido_cliente + direccion_cliente + precio_total
+
+E4.1:numero_recibo_compra(PK) + codigo_material(PK) + cantidad_compra_material
+E4.2: codigo_material(PK) + descripcion_material + precio_material 
+
+E5.1: codigo_material(PK) + cantidad_actual + stock_minimo + descripcion_material
+
+E6.1: código_proveedor(PK) + dni_proveedor + nombre_apellido_proveedor + direccion_proveedor 
+
+E7.1: código_proveedor(PK) + telefono_proveedor(PK)
+
+E8.1: código_proveedor(PK) + codigo_material(PK)
+
+E9.1: código_proveedor(PK) + codigo_compra_proveedor(PK) 
+E9.2: codigo_compra_proveedor(PK) + fecha_compra_proveedor + sector_compra_proveedor + legajo_encargado 
+
+E10.1:código_proveedor(PK) + codigo_compra_proveedor(PK) + codigo_material(PK) + cantidad_compra
+
+E11.1: codigo_sector (PK) + nombre_sector + descripcion_sector + legajo_encargado_sector 
+
+
+E12.1: codigo_sector(PK) + legajo_vendedor(PK)
+
+Tercera forma normal
+
+E1.1.1: legajo_empleado (PK) + dni + nomre_apellido_empleado + dirección + teléfono + fecha_ingreso + sector + dni_matrimonio(FK)
+E1.1.2: dni_matrimonio(PK) + nombre_apellido_matrimonio 
+
+E2.1.1: legajo_empleado(PK) + dnio_hij@ (PK) 
+
+E2.2.1: dnio_hij@ (PK) + nombre_apellido_hij@
+
+E3.1.1:  numero_recibo_compra(PK) + fecha_compra + dni_cliente (FK) + precio_total
+E3.1.2:dni_cliente(PK) + nombre_apellido_cliente + direccion_cliente 
+
+E4.1.1:numero_recibo_compra(PK) + codigo_material(PK) + cantidad_compra_material
+
+E4.2.1: codigo_material(PK) + descripcion_material + precio_material 
+
+E5.1.1: codigo_material(PK) + cantidad_actual + stock_minimo + descripcion_material
+
+E6.1.1: código_proveedor(PK) + dni_proveedor + nombre_apellido_proveedor + direccion_proveedor 
+
+E7.1.1: código_proveedor(PK) + telefono_proveedor(PK)
+
+E8.1.1: código_proveedor(PK) + codigo_material(PK)
+
+
+E9.1.1: código_proveedor(PK) + codigo_compra_proveedor(PK) 
+
+E9.2.1: codigo_compra_proveedor(PK) + fecha_compra_proveedor + sector_compra_proveedor(FK) + legajo_encargado(FK) 
+
+E10.1.1:código_proveedor(PK) + codigo_compra_proveedor(PK) + codigo_material(PK) + cantidad_compra
+
+E11.1.1: codigo_sector (PK) + nombre_sector + descripcion_sector + legajo_encargado_sector(FK) 
+
+E12.1.1: codigo_sector(PK) + legajo_vendedor(PK)
+
+
+
+Renombramiento
+
+Empleado: legajo_empleado (PK) + dni + nomre_apellido_empleado + dirección + teléfono + fecha_ingreso + sector + dni_matrimonio(FK)
+
+Pareja: dni_matrimonio(PK) + nombre_apellido_matrimonio 
+
+Empleado_Hij@s: legajo_empleado(PK) + dnio_hij@ (PK) 
+
+Hij@s: dnio_hij@ (PK) + nombre_apellido_hij@
+
+CompraCliente:  numero_recibo_compra(PK) + fecha_compra + dni_cliente (FK) + precio_total
+Cliente:dni_cliente(PK) + nombre_apellido_cliente + direccion_cliente 
+
+CompraCliente_Material:numero_recibo_compra(PK) + codigo_material(PK) + cantidad_compra_material
+
+Material: codigo_material(PK) + cantidad_actual + stock_minimo + descripcion_material + precio_material 
+
+Proveedor: código_proveedor(PK) + dni_proveedor + nombre_apellido_proveedor + direccion_proveedor 
+
+Proveedor_Telefono: código_proveedor(PK) + telefono_proveedor(PK)
+
+Proveedor_Material: código_proveedor(PK) + codigo_material(PK)
+
+Proveedor_CompraProveedor: código_proveedor(PK) + codigo_compra_proveedor(PK) 
+
+CompraProveedor: codigo_compra_proveedor(PK) + fecha_compra_proveedor + sector_compra_proveedor(FK) + legajo_encargado(FK) 
+
+Proveedor_CompraProveedor_Material:código_proveedor(PK) + codigo_compra_proveedor(PK) + codigo_material(PK) + cantidad_compra
+
+Sector: codigo_sector (PK) + nombre_sector + descripcion_sector + legajo_encargado_sector(FK) 
+
+Sector_Empleado: codigo_sector(PK) + legajo_vendedor(PK)

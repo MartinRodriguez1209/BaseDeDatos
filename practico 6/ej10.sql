@@ -1,0 +1,4 @@
+-- Crear un stored procedure que cree la tabla ‘Historico_Persona’ cuya definición
+-- es:
+-- Historico_Persona = dni_persona + fecha_modificacion + nombre_persona
+-- +apellido_persona + genero_persona + fecha_nacmimiento + teléfono_contacto
