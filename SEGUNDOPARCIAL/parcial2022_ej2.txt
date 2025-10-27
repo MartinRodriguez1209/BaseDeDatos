@@ -1,0 +1,33 @@
+TIQUE = punto_venta + comprobante_fiscal + fecha_tique + nombre_cliente {numero_item + codigo_barras + nombre_producto + cantidad_vendida + precio_unitario}
+
+OFERTA = codigo_oferta +nombre_oferta + {punto_venta + comprobante_fiscal + numero_item + importe_descuento}
+
+FORMA_PAGO = codigo_forma_pago + descripcion_forma_pago + {punto_venta + comprobante_fiscal + importe_pago}
+
+DESCUENTO = codigo_descuento + porcentaje_descuento_base + importe_descuento + punto_venta + comprobante_fiscal + numero_item + codigo_barras
+
+
+PRIMERA FORMA NORMAL
+
+E1: comprobante_fiscal(PK) + punto_venta  + fecha_tique + nombre_cliente 
+E2: comprobante_fiscal(PK) + numero_item(PK) + codigo_barras + nombre_producto + cantidad_vendida + precio_unitario
+
+E3: codigo_oferta(PK) + nombre_oferta
+E4: codigo_oferta(PK) + comprobante_fiscal (PK) + punto_venta + numero_item + importe_descuento
+
+E5: codigo_forma_pago(PK) + descripcion_forma_pago
+E6: codigo_forma_pago(PK) +  comprobante_fiscal(PK) + punto_venta + importe_pago
+
+E7: codigo_descuento(PK) + porcentaje_descuento_base + importe_descuento + punto_venta + comprobante_fiscal + numero_item + codigo_barras
+
+SEGUNDA FORMA NORMAL
+
+E1.1: comprobante_fiscal(PK) + punto_venta  + fecha_tique + nombre_cliente 
+
+E2.1: comprobante_fiscal(PK) + numero_item(PK) + cantidad_vendida 
+E2.2: numero_item(PK) + codigo_barras + nombre_producto + precio_unitario
+
+E3.1: codigo_oferta(PK) + nombre_oferta
+
+E4.1: codigo_oferta(PK) + comprobante_fiscal (PK) 
+E4.2:comprobante_fiscal (PK) + punto_venta + numero_item + importe_descuento

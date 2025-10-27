@@ -1,0 +1,88 @@
+A partir del siguiente enunciado armar el diccionario de datos, realizar la normalización
+y el diagrama entidad relación correspondiente:
+Una asociación zonal de automovilismo desea mantener información sobre las distintas carreras
+disputadas en las temporadas. Básicamente se desea registrar la fecha de cada competencia,
+características del circuito en que se corrió, tales como nombre del mismo, su grado de
+complejidad, ubicación geográfica, etc. Se desea registrar, también, datos generales de los
+distintos corredores, de los automóviles, y en particular qué automóvil condujo un corredor en
+una competencia determinada. Esto último se debe a que un corredor no necesariamente correrá
+siempre con un mismo automóvil, debido a que el binomio corredor-automóvil se determina por
+sorteo antes de cada competencia.
+De la misma manera se desea conservar información del equipo de personas que trabajan para
+cada corredor y de las tareas en las que se desempeñan.
+Considere conservar información relevante de las partes del automóvil, como ser motor, chasis,
+frenos, caja de cambios, carrocería y cubiertas.
+
+
+E1: cod_competencia + fecha_competencia + codigo_circuito + nombre_circuito + complejidad_circuito + ubicacion_circuito {codigo_corredor + nombre_corredor + codigo_auto + datos_auto}
+
+E2: codigo_corredor + nombre_corredor + {codigo_personal + nombre_personal + rol_personal + descripcion_rol + {codigo_tarea + descripcion_tarea + cod_competencia}} 
+
+
+
+PRIMERA FORMA NORMAL
+
+E1: cod_competencia(PK) + fecha_competencia + codigo_circuito + nombre_circuito + complejidad_circuito + ubicacion_circuito
+E2: cod_competencia(PK) + codigo_corredor(PK) + nombre_corredor + codigo_auto + datos_auto
+
+E3: codigo_corredor(PK) + nombre_corredor
+E4: codigo_corredor(PK) +-codigo_personal(PK) + nombre_personal + rol_personal + descripcion_rol 
+E5: codigo_corredor(PK) +-codigo_personal(PK) + codigo_tarea(PK) + descripcion_tarea + cod_competencia
+
+SEGUNDA FORMA NORMAL
+
+E1.1: cod_competencia(PK) + fecha_competencia + codigo_circuito + nombre_circuito + complejidad_circuito + ubicacion_circuito
+
+E2.1: cod_competencia(PK) + codigo_corredor(PK) + codigo_auto + datos_auto
+E2.2: codigo_corredor(PK) + nombre_corredor 
+
+E3.1: codigo_corredor(PK) + nombre_corredor
+
+E4.1: codigo_corredor(PK) +-codigo_personal(PK) 
+E4.2: codigo_personal(PK) + nombre_personal + rol_personal + descripcion_rol 
+
+E5.1: codigo_corredor(PK) +-codigo_personal(PK) + codigo_tarea(PK) 
+E5.2:codigo_tarea(PK) + descripcion_tarea + cod_competencia
+
+TERCERA FORMA NORMAL 
+
+E1.1.1: cod_competencia(PK) + fecha_competencia + codigo_circuito(FK) 
+E1.1.2: codigo_circuito(PK) + nombre_circuito + complejidad_circuito + ubicacion_circuito
+
+E2.1: cod_competencia(PK) + codigo_corredor(PK) + codigo_auto(FK)
+
+E2.2.1: codigo_corredor(PK) + nombre_corredor
+E2.2.2: codigo_auto(FK) + datos_auto
+
+E3.1.1: codigo_corredor(PK) + nombre_corredor
+
+
+E4.1.1: codigo_corredor(PK) +-codigo_personal(PK) 
+
+E4.2.1: codigo_personal(PK) + nombre_personal + rol_personal(FK)
+E4.2.2: rol_personal(PK) + descripcion_rol 
+
+E5.1.1: codigo_corredor(PK) +-codigo_personal(PK) + codigo_tarea(PK) 
+
+E5.2.1:codigo_tarea(PK) + descripcion_tarea + cod_competencia(FK)
+
+RENOMBRAMIENTO 
+
+COMPETENCIA: cod_competencia(PK) + fecha_competencia + codigo_circuito(FK) 
+CIRCUITO: codigo_circuito(PK) + nombre_circuito + complejidad_circuito + ubicacion_circuito
+
+COMPETENCIA_CORREDOR: cod_competencia(PK) + codigo_corredor(PK) 
+
+CORREDOR: codigo_corredor(PK) + nombre_corredor + codigo_auto(FK) 
+AUTO: codigo_auto(FK) + datos_auto
+
+CORREDOR_PERSONAL: codigo_corredor(PK) +-codigo_personal(PK) 
+
+PERSONAL: codigo_personal(PK) + nombre_personal + rol_personal(FK)
+ROL: rol_personal(PK) + descripcion_rol 
+
+CORREDOR_PERSONAL_TAREA: codigo_corredor(PK) +-codigo_personal(PK) + codigo_tarea(PK) 
+
+TAREA:codigo_tarea(PK) + descripcion_tarea + cod_competencia(FK)
+
+

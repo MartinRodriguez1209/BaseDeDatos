@@ -1,0 +1,115 @@
+CINES = id_cine + nombre_cine + direccion + cod_ciudad + nombre_ciudad + cod_postal +
+correo_consultas + sitio_web + {id_sala + nombre_sala + cant_ubicaciones + {fecha_funcion +
+{hora_funcion + id_pelicula + nombre_pelicula}}}
+
+PELICULA = id_pelicula + nombre_pelicula + año + duración + país + director + género + {id_actor +
+nombre_actor} + sinopsis + {id_critica + id_usuario + nombre_usuario + valoración + comentario }
+
+ENTRADA = id_entrada + forma_pago + monto_entrada + id_usuario + nombre_usuario +
+correo_asociado_usuario + id_cine + id_sala + fecha_funcion + hora_funcion + asiento
+
+ACTOR = id_actor + nombre_actor + foto + {id_pelicula + nombre_pelicula + país + género }
+
+
+PRIMERA FORMA NORMAL
+
+E1: id_cine(PK) + nombre_cine + direccion + cod_ciudad + nombre_ciudad + cod_postal +
+correo_consultas + sitio_web
+E2: id_cine(PK) + id_sala(PK) + nombre_sala + cant_ubicaciones 
+E3: id_cine(PK) + id_sala(PK) + fecha_funcion(PK)
+E4: id_cine(PK) + id_sala(PK) + fecha_funcion(PK) + hora_funcion(PK) + id_pelicula  + nombre_pelicula
+
+E5: id_pelicula(PK) + nombre_pelicula + año + duración + país + director + género + sinopsis
+E6: id_pelicula(PK) + id_actor(PK) + nombre_actor
+E7: id_pelicula(PK) + id_critica(PK) + id_usuario + nombre_usuario + valoración + comentario 
+
+E8: id_entrada(PK) + forma_pago + monto_entrada + id_usuario + nombre_usuario + correo_asociado_usuario + id_cine + id_sala + fecha_funcion + hora_funcion + asiento
+
+E9: id_actor(PK) + nombre_actor + foto
+E10: id_actor(PK) + id_pelicula(PK) + nombre_pelicula + país + género
+
+SEGUNDA FORMA NORMAL
+
+E1.1: id_cine(PK) + nombre_cine + direccion + cod_ciudad + nombre_ciudad + cod_postal + correo_consultas + sitio_web
+
+E2.1: id_cine(PK) + id_sala(PK)
+E2.2: id_sala(PK) + nombre_sala + cant_ubicaciones 
+
+E3.1: id_cine(PK) + id_sala(PK) + fecha_funcion(PK)
+
+E4.1: id_cine(PK) + id_sala(PK) + fecha_funcion(PK) +hora_funcion(PK) + id_pelicula
+
+E5.1: id_pelicula(PK) + nombre_pelicula + año + duración + país + director + género + sinopsis
+
+E6.1: id_pelicula(PK) + id_actor(PK)
+E6.2: id_actor(PK) + nombre_actor
+
+E7.1: id_pelicula(PK) + id_critica(PK)
+E7.2: id_critica(PK) + id_usuario + nombre_usuario + valoración + comentario 
+
+E8.1: id_entrada(PK) + forma_pago + monto_entrada + id_usuario + nombre_usuario + correo_asociado_usuario + id_cine + id_sala + fecha_funcion + hora_funcion + asiento
+
+E9.1: id_actor(PK) + nombre_actor + foto
+
+E10.1: id_actor(PK) + id_pelicula(PK)
+E10.2: id_pelicula(PK) + nombre_pelicula + país + género
+
+TERCERA FORMA NORMAL
+
+E1.1.1: id_cine(PK) + nombre_cine + direccion + cod_ciudad(FK) + correo_consultas + sitio_web
+E1.1.2: cod_ciudad(PK) + nombre_ciudad + cod_postal
+
+E2.1.1: id_cine(PK) + id_sala(PK)
+E2.2.1: id_sala(PK) + nombre_sala + cant_ubicaciones 
+
+E3.1.1: id_cine(PK) + id_sala(PK) + fecha_funcion(PK)
+
+E4.1.1: id_cine(PK) + id_sala(PK) + fecha_funcion(PK) + hora_funcion(PK) + id_pelicula(FK)
+
+
+E5.1.1: id_pelicula(PK) + nombre_pelicula + año + duración + país + director + género + sinopsis
+
+E6.1.1: id_pelicula(PK) + id_actor(PK)
+E6.2.1: id_actor(PK) + nombre_actor
+
+E7.1.1: id_pelicula(PK) + id_critica(PK)
+
+E7.2.1: id_critica(PK) + id_usuario(FK) + valoración + comentario 
+E7.2.2: id_usuario(PK) + nombre_usuario 
+
+E8.1.1: id_entrada(PK) + forma_pago + monto_entrada + id_usuario(FK) + id_cine(FK) + id_sala(FK) + fecha_funcion(FK) + hora_funcion(FK) + asiento
+E8.1.2: id_usuario(PK) + nombre_usuario + correo_asociado_usuario
+
+E9.1.1: id_actor(PK) + nombre_actor + foto
+
+E10.1: id_actor(PK) + id_pelicula(PK)
+
+E10.2: id_pelicula(PK) + nombre_pelicula + país + género
+
+RENOMBRAMIENTO
+
+CINE: id_cine(PK) + nombre_cine + direccion + cod_ciudad(FK) + correo_consultas + sitio_web
+
+CIUDAD: cod_ciudad(PK) + nombre_ciudad + cod_postal
+
+SALA: id_sala(PK) + nombre_sala + cant_ubicaciones 
+
+CINE_SALA: id_cine(PK) + id_sala(PK)
+
+CINE_SALA_FECHA:  id_cine(PK) + id_sala(PK) + fecha_funcion(PK)
+
+CINE_SALA_FECHA_HORA: id_cine(PK) + id_sala(PK) + fecha_funcion(PK) + hora_funcion(PK) + id_pelicula(FK)
+
+PELICULA: id_pelicula(PK) + nombre_pelicula + año + duración + país + director + género + sinopsis
+
+ACTOR: id_actor(PK) + nombre_actor + foto
+
+PELICULA_ACTOR: id_pelicula(PK) + id_actor(PK)
+
+CRITICA: id_critica(PK) + id_usuario(FK) + valoración + comentario 
+
+PELICULA_CRITICA: id_pelicula(PK) + id_critica(PK)
+
+USUARIO: id_usuario(PK) + nombre_usuario + correo_asociado_usuario
+
+ENTRADA: id_entrada(PK) + forma_pago + monto_entrada + id_usuario(FK) + id_cine(FK) + id_sala(FK) + fecha_funcion(FK) + hora_funcion(FK) + asiento

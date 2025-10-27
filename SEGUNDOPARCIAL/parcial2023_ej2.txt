@@ -1,0 +1,84 @@
+
+2. Partiendo del siguiente diccionario de datos, normalizar, indicar claves, y realizar el diagrama entidad relación correspondiente:
+
+
+EMPLEADO= cod_legajo + apellido_empleado + nombres_empleado + {cod_contacto + dato_contacto + cod_tipo_contacto + tipo_contacto} + 
+{cod_sede_ingreso + nombre_sede + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector + 
+{fecha_inicio + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado}}
+
+LICENCIA= cod_legajo + direccion_empleado + dni_empleado + {cod_sede + nombre_sede + direccion sede + fecha_ingreso sede +
+ {fecha inicio + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado}}
+
+SEDE= cod_sede + nombre_sede + direccion_sede + {cod_legajo + apellido_empleado + nombres_empleado + cod_sector_ingreso + nombre_sector_ingreso}
+
+
+PRIMERA FORMA NORMAL
+
+E1: cod_legajo(PK) + apellido_empleado + nombres_empleado
+E2: cod_legajo(PK) + cod_contacto(PK) + dato_contacto + cod_tipo_contacto + tipo_contacto
+E3: cod_legajo(PK) + cod_sede_ingreso(PK) + nombre_sede + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector
+E4: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+
+E5: cod_legajo(PK) + direccion_empleado + dni_empleado 
+E6: cod_legajo(PK) + cod_sede(PK) + nombre_sede + direccion sede + fecha_ingreso sede
+E7: cod_legajo(PK) + cod_sede(PK) + fecha inicio(PK) + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+
+E8: cod_sede(PK) + nombre_sede + direccion_sede 
+E9: cod_sede(PK) + cod_legajo(PK) + apellido_empleado + nombres_empleado + cod_sector_ingreso + nombre_sector_ingreso
+
+SEGUNDA FORMA NORMAL
+
+E1.1: cod_legajo(PK) + apellido_empleado + nombres_empleado
+
+E2.1: cod_legajo(PK) + cod_contacto(PK)
+E2.2: cod_contacto(PK) + dato_contacto + cod_tipo_contacto + tipo_contacto
+
+E3.1: cod_legajo(PK) + cod_sede_ingreso(PK) 
+E3.2: cod_sede_ingreso(PK) + nombre_sede + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector
+E4.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+E4.2: fecha_inicio(PK) + fecha_fin
+
+E5.1: cod_legajo(PK) + direccion_empleado + dni_empleado 
+E6.1: cod_legajo(PK) + cod_sede(PK) + fecha_ingreso sede 
+E6.2: cod_sede(PK) + nombre_sede + direccion sede 
+
+E7.1: cod_legajo(PK) + cod_sede(PK) + fecha inicio(PK) + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+E7.2: fecha inicio(PK) + fecha_fin 
+
+E8.1: cod_sede(PK) + nombre_sede + direccion_sede 
+
+E9.1: cod_sede(PK) + cod_legajo(PK) + cod_sector_ingreso + nombre_sector_ingreso
+E9.2: cod_legajo(PK) + apellido_empleado + nombres_empleado
+
+TERCERA FORMA NORMAL
+
+E1.1.1: cod_legajo(PK) + apellido_empleado + nombres_empleado
+
+E2.1.1: cod_legajo(PK) + cod_contacto(PK)
+
+E2.2.1: cod_contacto(PK) + dato_contacto + cod_tipo_contacto(FK)
+E2.2.2: cod_tipo_contacto(PK) + tipo_contacto
+
+E3.1.1: cod_legajo(PK) + cod_sede_ingreso(PK) 
+
+E3.2.1: cod_sede_ingreso(PK) + nombre_sede + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector
+
+E4.1.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + id_tipo_licencia(FK) + entrega_certificado
+E4.1.2: id_tipo_licencia(PK) + nombre_tipo_licencia
+
+E5.1.1: cod_legajo(PK) + direccion_empleado + dni_empleado 
+
+E6.1.1: cod_legajo(PK) + cod_sede(PK) + fecha_ingreso sede 
+
+E6.2.1: cod_sede(PK) + nombre_sede + direccion sede 
+
+E7.1.1: cod_legajo(PK) + cod_sede(PK) + fecha inicio(PK) + id_tipo_licencia(FK) + entrega_certificado
+E7.1.2: id_tipo_licencia(PK) + nombre_tipo_licencia
+
+E7.2.1: fecha inicio(PK) + fecha_fin 
+
+E8.1.1: cod_sede(PK) + nombre_sede + direccion_sede 
+
+E9.1.1: cod_sede(PK) + cod_legajo(PK) + cod_sector_ingreso + nombre_sector_ingreso
+
+E9.2.1: cod_legajo(PK) + apellido_empleado + nombres_empleado

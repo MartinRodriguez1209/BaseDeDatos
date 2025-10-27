@@ -68,3 +68,17 @@ E7.1.1: id_cliente(PK) + nombre_cliente + apellido
 
 E8.1.1:  id_cliente(PK) + numero_telefono(PK)
 E8.2.1: numero_telefono(PK) + interno + tipo_telefono + numero_a_discar
+
+RENOMBRAMIENTO
+
+REPARACION: numero_reparacion(PK) + fecha_reparacion + id_cliente(FK)
+CLIENTE: id_cliente(PK) + nombre_cliente + email_cliente + apellido
+REPARACION_REPUESTO: numero_reparacion(PK) + id_repuesto(PK) + cantidad_utlizada
+REPUESTO: id_repuesto(PK) + descripcion_repuesto + cantidad_stock + codigo_repuesto + punto_pedido
+REPARACION_USUARIO:  numero_reparacion(PK) + id_usuario(PK)
+USUARIO: id_usuario(PK) + nombre_usuario + contraseña
+REPARACION_USUARIO_FECHA: numero_reparacion(PK) + id_usuario(PK) + fecha_trabajo(PK) + descripcion_tarea 
+REPUESTO_PROVEEDOR:  id_repuesto(PK) + id_proveedor(PK) + direccion_envio_repuesto
+PROVEEDOR: id_proveedor(PK) + cuit + nombre_proveedor
+CLIENTE_TELEFONO:  id_cliente(PK) + numero_telefono(PK)
+TELEFONO: numero_telefono(PK) + interno + tipo_telefono + numero_a_discar

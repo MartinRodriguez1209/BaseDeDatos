@@ -40,3 +40,14 @@ E3.1.1: id_libro (PK) + id_prestamo (PK)
 
 E3.2.1: id_prestamo (PK) + id_libro(FK) + id_usuario(FK) + fecha_prestamo + fecha_devolucion + fecha_devolucion_real
 E3.2.2: id_usuario(PK) + nombre + apellido + email + telefono + direccion 
+
+
+RENOMBRAMIENTO
+LIBRO: id_libro (PK) + titulo + isbn + año_publicacion + cantidad_ejemplares + id_genero(FK) 
+GENERO: id_genero(PK) + nombre_genero
+LIBRO_AUTOR: id_libro (PK) + id_autor(PK)
+AUTOR: id_autor(PK) + nombre + apellido +id_nacionalidad(FK)
+NACIONALIDAD: id_nacionalidad(PK) + nacionalidad
+LIBRO_PRESTAMO: id_libro (PK) + id_prestamo (PK) 
+PRESTAMO:  id_prestamo (PK) + id_libro(FK) + id_usuario(FK) + fecha_prestamo + fecha_devolucion + fecha_devolucion_real
+USUARIO: id_usuario(PK) + nombre + apellido + email + telefono + direccion 

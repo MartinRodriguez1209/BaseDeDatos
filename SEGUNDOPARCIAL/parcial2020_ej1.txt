@@ -1,0 +1,36 @@
+VIATICOS = cod_empleado + nombre + apellido + direccion + telefono_ppal + correo + id_sede +
+nombre_sede + direccion_sede + {cod_proyecto + nombre_proyecto + fecha_inicio + fecha_finalizacion
++ fecha_ingreso_empleado + cargo_en_proyecto + {cod_viaje + fecha_ida + fecha_vuelta + {nro_costo
++ id_tipo_costo + nombre_tipo_costo + monto + se_reintegra + descripcion_gasto}}}
+
+
+PRIMERA FORMA NORMAL
+
+E1: cod_empleado(PK) + nombre + apellido + direccion + telefono_ppal + correo + id_sede + nombre_sede + direccion_sede
+
+E2: cod_empleado(PK) + cod_proyecto(PK) + nombre_proyecto + fecha_inicio + fecha_finalizacion + fecha_ingreso_empleado + cargo_en_proyecto 
+
+E3: cod_empleado(PK) + cod_proyecto(PK) + cod_viaje(PK) + fecha_ida + fecha_vuelta 
+
+E4: cod_empleado(PK) + cod_proyecto(PK) + cod_viaje(PK) + nro_costo(PK) + id_tipo_costo + nombre_tipo_costo + monto + se_reintegra + descripcion_gasto
+
+SEGUNDA FORMA NORMAL
+
+E1.1: cod_empleado(PK) + nombre + apellido + direccion + telefono_ppal + correo + id_sede + nombre_sede + direccion_sede
+
+E2.1: cod_empleado(PK) + cod_proyecto(PK) + fecha_ingreso_empleado + cargo_en_proyecto 
+E2.2: cod_proyecto(PK) + nombre_proyecto + fecha_inicio + fecha_finalizacion 
+
+E3.1: cod_empleado(PK) + cod_proyecto(PK) + cod_viaje(PK) 
+E3.2: cod_viaje(PK) + fecha_ida + fecha_vuelta 
+
+E4.1: cod_empleado(PK) + cod_proyecto(PK) + cod_viaje(PK) + nro_costo(PK)
+E4.2: cod_viaje(PK) + nro_costo(PK) + id_tipo_costo + nombre_tipo_costo + monto + se_reintegra + descripcion_gasto
+
+TERCERA FORMA NORMAL
+
+E1.1.1: cod_empleado(PK) + nombre + apellido + direccion + telefono_ppal + correo + id_sede(FK)
+E1.1.2: id_sede(PK) + nombre_sede + direccion_sede
+
+E2.1.1: cod_empleado(PK) + cod_proyecto(PK) + fecha_ingreso_empleado + cargo_en_proyecto 
+

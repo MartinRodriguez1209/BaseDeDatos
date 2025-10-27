@@ -1,0 +1,59 @@
+ESQUEMA1 = cod_proyecto + nombre_proyecto + area_proyecto + cod_sector + nombre_sector +
+{cod_sede + nombre_sede + es_sede_central + {id_empleado + nombre_apellido_empleado +
+correo_empleado + fecha_alta_en_proyecto}}
+
+ESQUEMA2 = id_empleado + nombre_apellido_empleado + correo_empleado + {nro_direccion + direccion
++ piso + barrio}
+
+PRIMERA FORMA NORMAL 
+
+E1: cod_proyecto(PK) + nombre_proyecto + area_proyecto + cod_sector + nombre_sector
+E2: cod_proyecto(PK) + cod_sede(PK) + nombre_sede + es_sede_central 
+E3: cod_proyecto(PK) + cod_sede(PK) + id_empleado(PK) + nombre_apellido_empleado + correo_empleado + fecha_alta_en_proyecto
+
+E4: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+E5: id_empleado(PK) + nro_direccion(PK) + direccion + piso + barrio
+
+SEGUNDA FORMA NORMAL
+
+E1.1: cod_proyecto(PK) + nombre_proyecto + area_proyecto + cod_sector + nombre_sector
+
+E2.1: cod_proyecto(PK) + cod_sede(PK)
+E2.2: cod_sede(PK) + nombre_sede + es_sede_central 
+
+E3.1: cod_proyecto(PK) + cod_sede(PK) + id_empleado(PK) + fecha_alta_en_proyecto
+E3.2: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+
+E4.1: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+
+E5.1: id_empleado(PK) + nro_direccion(PK)
+E5.2: nro_direccion(PK) + direccion + piso + barrio
+
+TERCERA FORMA NORMAL
+
+E1.1.1: cod_proyecto(PK) + nombre_proyecto + area_proyecto + cod_sector(FK)
+E1.1.2: cod_sector(PK) + nombre_sector
+
+E2.1.1: cod_proyecto(PK) + cod_sede(PK)
+E2.2.1: cod_sede(PK) + nombre_sede + es_sede_central 
+
+E3.1.1: cod_proyecto(PK) + cod_sede(PK) + id_empleado(PK) + fecha_alta_en_proyecto
+
+E3.2.1: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+
+E4.1.1: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+
+E5.1.1: id_empleado(PK) + nro_direccion(PK)
+
+E5.2.1: nro_direccion(PK) + direccion + piso + barrio
+
+RENOMBRAMIENTO
+
+PROYECTO: cod_proyecto(PK) + nombre_proyecto + area_proyecto + cod_sector(FK)
+SECTOR: cod_sector(PK) + nombre_sector
+SEDE: cod_sede(PK) + nombre_sede + es_sede_central 
+PROYECTO_SEDE: cod_proyecto(PK) + cod_sede(PK)
+PROYECTO_SEDE_EMPLEADO: cod_proyecto(PK) + cod_sede(PK) + id_empleado(PK) + fecha_alta_en_proyecto
+EMPLEADO: id_empleado(PK) + nombre_apellido_empleado + correo_empleado
+EMPLEADO_DIRECCION: id_empleado(PK) + nro_direccion(PK)
+DIRECCION: nro_direccion(PK) + direccion + piso + barrio
