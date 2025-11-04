@@ -1,0 +1,116 @@
+CLUB = id_club + nombre_club + direccion + cod_ciudad + nombre_ciudad + cod_postal + sitio_web +
+{id_socio + nombre_socio + {id_actividad + nombre_actividad }}
+
+SOCIO = id_socio + nombre_socio + direccion_socio + {numero_cuota + periodo + fecha_vencimiento +
+importe} + {numero_inscripcion + fecha_inscripcion + id_actividad}
+
+ACTIVIDAD = id_actividad + nombre_actividad + {codigo_dia_semana + nombre_dia_semana +
+{hora_inicio + hora_fin}}
+
+
+PRIMERA FORMA NORMAL
+
+E1: id_club(PK) + nombre_club + direccion + cod_ciudad + nombre_ciudad + cod_postal + sitio_web
+
+E2: id_club(PK) + id_socio(PK) + nombre_socio 
+
+E3: id_club(PK) + id_socio(PK) + id_actividad(PK) + nombre_actividad
+
+E4: id_socio(PK) + nombre_socio + direccion_socio
+
+E5: id_socio(PK) + numero_cuota(PK) + periodo + fecha_vencimiento + importe
+
+E6: id_socio(PK) + numero_inscripcion(PK) + fecha_inscripcion + id_actividad
+
+E7: id_actividad(PK) + nombre_actividad
+
+E8: id_actividad(PK) + codigo_dia_semana(PK) + nombre_dia_semana
+
+E9: id_actividad(PK) + codigo_dia_semana(PK) + hora_inicio(PK) + hora_fin
+
+SEGUNDA FORMA NORMAL 
+
+E1.1: id_club(PK) + nombre_club + direccion + cod_ciudad + nombre_ciudad + cod_postal + sitio_web
+
+E2.1: id_club(PK) + id_socio(PK)
+E2.2: id_socio(PK) + nombre_socio 
+
+E3.1: id_club(PK) + id_socio(PK) + id_actividad(PK)
+E3.2: id_actividad(PK) + nombre_actividad
+
+E4.1: id_socio(PK) + nombre_socio + direccion_socio
+
+E5.1: id_socio(PK) + numero_cuota(PK)
+E5.2: numero_cuota(PK) + periodo + fecha_vencimiento + importe (considero que cada cuota tiene un numero unico para identificarla)
+
+E6.1: id_socio(PK) + numero_inscripcion(PK)
+E6.2: numero_inscripcion(PK) + fecha_inscripcion + id_actividad (considero que cada inscripcion tiene un numero unico para identificarla)
+
+
+E7.1: id_actividad(PK) + nombre_actividad
+
+E8.1: id_actividad(PK) + codigo_dia_semana(PK)
+E8.2: codigo_dia_semana(PK) + nombre_dia_semana
+
+E9.1: id_actividad(PK) + codigo_dia_semana(PK) + hora_inicio(PK) + hora_fin
+
+TERCERA FORMA NORMAL 
+
+
+
+E1.1.1: id_club(PK) + nombre_club + direccion + cod_ciudad(FK) + cod_postal + sitio_web
+E1.1.2: cod_ciudad(PK) + nombre_ciudad
+
+E2.1.1: id_club(PK) + id_socio(PK)
+
+E2.2.1: id_socio(PK) + nombre_socio 
+
+E3.1.1: id_club(PK) + id_socio(PK) + id_actividad(PK)
+
+E3.2.1: id_actividad(PK) + nombre_actividad
+
+E4.1.1: id_socio(PK) + nombre_socio + direccion_socio
+
+E5.1.1: id_socio(PK) + numero_cuota(PK)
+
+E5.2.1: numero_cuota(PK) + periodo + fecha_vencimiento + importe
+
+E6.1.1: id_socio(PK) + numero_inscripcion(PK)
+
+E6.2.1: numero_inscripcion(PK) + fecha_inscripcion + id_actividad(FK)
+E7.1.1: id_actividad(PK) + nombre_actividad
+
+E8.1.1: id_actividad(PK) + codigo_dia_semana(PK)
+
+E8.2.1: codigo_dia_semana(PK) + nombre_dia_semana
+
+E9.1.1: id_actividad(PK) + codigo_dia_semana(PK) + hora_inicio(PK) + hora_fin
+
+RENOMBRAMIENTO
+
+CLUB: id_club(PK) + nombre_club + direccion + cod_ciudad(FK) + cod_postal + sitio_web
+
+CIUDAD: cod_ciudad(PK) + nombre_ciudad
+
+SOCIO: id_socio(PK) + nombre_socio + direccion_socio
+
+CLUB_SOCIO: id_club(PK) + id_socio(PK)
+
+ACTIVIDAD: id_actividad(PK) + nombre_actividad
+
+CLUB_SOCIO_ACTIVIDAD: id_club(PK) + id_socio(PK) + id_actividad(PK)
+
+SOCIO_CUOTA: id_socio(PK) + numero_cuota(PK)
+
+CUOTA: numero_cuota(PK) + periodo + fecha_vencimiento + importe
+
+SOCIO_INSCRIPCION: id_socio(PK) + numero_inscripcion(PK)
+
+INSCRIPCION: numero_inscripcion(PK) + fecha_inscripcion + id_actividad(FK)
+
+DIA_SEMANA: codigo_dia_semana(PK) + nombre_dia_semana
+
+ACTIVIDAD_DIA_SEMANA: id_actividad(PK) + codigo_dia_semana(PK)
+
+ACTIVIDAD_DIA_SEMANA_HORA_INICIO = id_actividad(PK) + codigo_dia_semana(PK) + hora_inicio(PK) + hora_fin
+

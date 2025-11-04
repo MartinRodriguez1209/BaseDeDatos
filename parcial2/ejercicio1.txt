@@ -1,0 +1,64 @@
+LICENCIAS= cod_legajo + apellido_empleado + nombres_empleados + direccion_empleado +
+{cod_contacto + dato_contacto + cod_tipo_contacto + tipo_contacto} + { cod_sede_ingreso + nombre_sede
++ cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector +
+{fecha_inicio + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado}}
+
+
+PRIMERA FORMA NORMAL 
+
+E1: cod_legajo(PK) + apellido_empleado + nombres_empleados + direccion_empleado 
+
+E2: cod_legajo(PK) + cod_contacto(PK) + dato_contacto + cod_tipo_contacto + tipo_contacto
+
+E3: cod_legajo(PK) + cod_sede_ingreso(PK) + nombre_sede  + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector + fecha_ingreso_sede_sector
+
+E4: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+
+SEGUNDA FORMA NORMAL
+
+E1.1: cod_legajo(PK) + apellido_empleado + nombres_empleados + direccion_empleado 
+
+E2.1: cod_legajo(PK) + cod_contacto(PK) 
+E2.2: cod_contacto(PK) + dato_contacto + cod_tipo_contacto + tipo_contacto
+
+E3.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_ingreso_sede_sector (considero que es la fecha de ingreso de ese legajo en ese sector)
+E3.2: cod_sede_ingreso(PK) + nombre_sede  + cod_sector_ingreso + nombre_sector_ingreso + direccion_sede_sector
+
+E4.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + fecha_fin + id_tipo_licencia + nombre_tipo_licencia + entrega_certificado
+
+TERCERA FORMA NORMAL 
+
+E1.1.1: cod_legajo(PK) + apellido_empleado + nombres_empleados + direccion_empleado 
+
+E2.1.1: cod_legajo(PK) + cod_contacto(PK) 
+
+E2.2.1: cod_contacto(PK) + dato_contacto + cod_tipo_contacto(FK)
+E2.2.2: cod_tipo_contacto(PK) + tipo_contacto
+
+E3.1.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_ingreso_sede_sector
+
+E3.2.1: cod_sede_ingreso(PK) + nombre_sede  + cod_sector_ingreso(FK)
+E3.2.2: cod_sector_ingreso(PK) + nombre_sector_ingreso + direccion_sede_sector
+
+E4.1.1: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + fecha_fin + id_tipo_licencia(FK) + entrega_certificado
+E4.1.2: id_tipo_licencia(PK) + nombre_tipo_licencia
+
+RENOMBRAMIENTO
+
+EMPLEADO: cod_legajo(PK) + apellido_empleado + nombres_empleados + direccion_empleado 
+
+CONTACTO: cod_contacto(PK) + dato_contacto + cod_tipo_contacto(FK)
+
+EMPLEADO_CONTACTO: cod_legajo(PK) + cod_contacto(PK) 
+
+TIPO_CONTACTO: cod_tipo_contacto(PK) + tipo_contacto
+
+EMPLEADO_SEDE_INGRESO: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_ingreso_sede_sector
+
+SEDE_INGRESO: cod_sede_ingreso(PK) + nombre_sede  + cod_sector_ingreso(FK)
+
+SECTOR_INGRESO: cod_sector_ingreso(PK) + nombre_sector_ingreso + direccion_sede_sector
+
+FECHA_INICIO: cod_legajo(PK) + cod_sede_ingreso(PK) + fecha_inicio(PK) + fecha_fin + id_tipo_licencia(FK) + entrega_certificado
+
+LICENCIA: id_tipo_licencia(PK) + nombre_tipo_licencia
